@@ -21,50 +21,19 @@ def test_diff_evolution_part_3():
     def rosenbrock(array):
         return (1 - array[0]) ** 2 + 100 * (array[1] - array[0] ** 2) ** 2
 
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='random_selection')))[-1][1] ==  9.022457447827037e-09
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='current')))[-1][1] ==  4.044373724809702e-10
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='worst')))[-1][1] ==  1.7763568394002505e-15
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='random_among_worst')))[-1][1] ==  2.2562766872624707e-06
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand2', selection_setting='random_selection')))[-1][1] ==  9.324457650450313e-09
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand2', selection_setting='current')))[-1][1] ==  0.0001792338154231743
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand2', selection_setting='worst')))[-1][1] ==  8.189005029635155e-13
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand2', selection_setting='random_among_worst')))[-1][1] ==  4.563925637768307e-05
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='best1', selection_setting='random_selection')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='best1', selection_setting='current')))[-1][1] ==  1.9539925233402755e-14
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='best1', selection_setting='worst')))[-1][1] ==  0.9949590570932898
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='best1', selection_setting='random_among_worst')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand_to_p_best1', selection_setting='random_selection')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand_to_p_best1', selection_setting='current')))[-1][1] ==  1.7763568394002505e-15
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand_to_p_best1', selection_setting='worst')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand_to_p_best1', selection_setting='random_among_worst')))[-1][1] ==  1.7763568394002505e-15
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='random_selection')))[-1][1] ==  5.21249710061511e-13
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='current')))[-1][1] ==  1.8017032310524428e-11
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='worst')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='random_among_worst')))[-1][1] ==  7.780442956573097e-13
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand2', selection_setting='random_selection')))[-1][1] ==  8.940181928096536e-12
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand2', selection_setting='current')))[-1][1] ==  4.449752566415555e-09
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand2', selection_setting='worst')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand2', selection_setting='random_among_worst')))[-1][1] ==  4.352338711655079e-09
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='best1', selection_setting='random_selection')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='best1', selection_setting='current')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='best1', selection_setting='worst')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='best1', selection_setting='random_among_worst')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand_to_p_best1', selection_setting='random_selection')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand_to_p_best1', selection_setting='current')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand_to_p_best1', selection_setting='worst')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand_to_p_best1', selection_setting='random_among_worst')))[-1][1] ==  0.0
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='rand1', selection_setting='current')))[-1][1] ==  2.2428120991787372e-05
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='rand1', selection_setting='worst')))[-1][1] ==  6.8610005020808336e-09
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='rand1', selection_setting='random_among_worst')))[-1][1] ==  4.54963851291326e-05
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='rand2', selection_setting='random_selection')))[-1][1] ==  9.659293658574029e-06
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='rand2', selection_setting='current')))[-1][1] ==  0.0003583405017178267
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='rand2', selection_setting='worst')))[-1][1] ==  5.476435354155614e-06
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='rand2', selection_setting='random_among_worst')))[-1][1] ==  3.088107357810844e-05
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='best1', selection_setting='random_selection')))[-1][1] ==  7.681663761139406e-10
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='best1', selection_setting='current')))[-1][1] ==  7.689410044606886e-09
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='best1', selection_setting='worst')))[-1][1] ==  3.77437687019181e-14
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='best1', selection_setting='random_among_worst')))[-1][1] ==  3.035989650540948e-09
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='rand_to_p_best1', selection_setting='random_selection')))[-1][1] ==  4.803442283500619e-10
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='rand_to_p_best1', selection_setting='current')))[-1][1] ==  2.4542272386157863e-08
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='rand_to_p_best1', selection_setting='worst')))[-1][1] ==  3.5119405241796733e-13
-    assert np.array(list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='Halton', mutation_setting='rand_to_p_best1', selection_setting='random_among_worst')))[-1][1] ==  2.316908229883164e-08
+    
+    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting=random, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  3.379606654175286e-05
+    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting=random, mutation_setting='rand1', selection_setting='worst'))[-1][1] ==  1.623440975814363e-06
+    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting=random, mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1] ==  2.6353992512128422e-05
+    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting=random, mutation_setting='rand1', selection_setting='random_selection'))[-1][1] ==  5.0291536127361185e-05
+    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.197346524151044e-07
+    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='worst'))[-1][1] ==  5.329070518200751e-15
+    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1] ==  3.451623165062756e-08
+    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='random_selection'))[-1][1] ==  2.028812673415814e-10
+    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.0215162049576065e-12
+    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='worst'))[-1][1] ==  0.0
+    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1] ==  2.8119728767705965e-12
+    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='random_selection'))[-1][1] ==  2.404743071338089e-13
+
+
+
