@@ -6,7 +6,7 @@ import math
 
 def test_diff_evolution_part_1():
     from diff_evolution import differential_evolution
-    SEED = 21
+    SEED = 228
     random.seed(SEED)
     np.random.seed(SEED)
 
