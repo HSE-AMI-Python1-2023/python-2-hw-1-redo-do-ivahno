@@ -21,15 +21,15 @@ def test_diff_evolution_part_1():
     def rosenbrock(array):
         return (1 - array[0]) ** 2 + 100 * (array[1] - array[0] ** 2) ** 2
 
-    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  3.379606654175286e-05
-    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting="LatinHypercube", mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.7068164604891756e-05
-    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting="Halton", mutation_setting='rand1', selection_setting='current'))[-1][1] ==  2.2428120991787372e-05
-    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting="Sobol", mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.00016929239603726042
-    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.197346524151044e-07
-    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='LatinHypercube', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.2930886263973207e-06
-    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  4.044373724809702e-10
-    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Sobol', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.5938252939662334e-06
-    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.0215162049576065e-12
-    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='LatinHypercube', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  9.044764937016225e-12
-    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.8017032310524428e-11
-    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Sobol', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  2.5156543514981422e-12
+    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting=random, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.0007965913468088421
+    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting=LatinHypercube, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.0030976463647417354
+    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting=Halton, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.0020390331159686175
+    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting=Sobol, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.00041926842306164364
+    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  3.942063862893974e-06
+    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='LatinHypercube', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  7.703976443451666e-06
+    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.5745836474678754e-06
+    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Sobol', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  7.500436325358351e-07
+    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  3.7769787297747826e-13
+    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='LatinHypercube', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  5.88462611972318e-12
+    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.0628165014736624e-11
+    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='Sobol', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  7.244205235679146e-13

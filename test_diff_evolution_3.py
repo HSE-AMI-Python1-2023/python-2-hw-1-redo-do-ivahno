@@ -6,7 +6,7 @@ import math
 
 def test_diff_evolution_part_3():
     from diff_evolution import differential_evolution
-    SEED = 21
+    SEED = 7
     random.seed(SEED)
     np.random.seed(SEED)
 
@@ -22,18 +22,20 @@ def test_diff_evolution_part_3():
         return (1 - array[0]) ** 2 + 100 * (array[1] - array[0] ** 2) ** 2
 
     
-    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  3.379606654175286e-05
-    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='random', mutation_setting='rand1', selection_setting='worst'))[-1][1] ==  1.623440975814363e-06
-    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='random', mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1] ==  2.6353992512128422e-05
-    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='random', mutation_setting='rand1', selection_setting='random_selection'))[-1][1] ==  5.0291536127361185e-05
-    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.197346524151044e-07
-    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='worst'))[-1][1] ==  5.329070518200751e-15
-    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1] ==  3.451623165062756e-08
-    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='random_selection'))[-1][1] ==  2.028812673415814e-10
-    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.0215162049576065e-12
-    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='worst'))[-1][1] ==  0.0
-    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1] ==  2.8119728767705965e-12
-    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='random_selection'))[-1][1] ==  2.404743071338089e-13
+    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting=random, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.0007965913468088421
+    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting=random, mutation_setting='rand1', selection_setting='worst'))[-1][1] ==  9.08373646547208e-06
+    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting=random, mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1] ==  0.1283725015340844
+    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting=random, mutation_setting='rand1', selection_setting='random_selection'))[-1][1] ==  0.006731723073572758
+
+    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  3.942063862893974e-06
+    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='worst'))[-1][1] ==  0.0
+    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1] ==  8.881784197001252e-15
+    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='random_selection'))[-1][1] ==  3.2196574295539904e-09
+
+    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  3.7769787297747826e-13
+    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='worst'))[-1][1] ==  0.0
+    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1] ==  0.0
+    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting=random, mutation_setting='rand1', selection_setting='random_selection'))[-1][1] ==  1.4921397450962104e-13
 
 
 
