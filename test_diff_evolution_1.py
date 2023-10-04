@@ -21,7 +21,7 @@ def test_diff_evolution_part_1():
     def rosenbrock(array):
         return (1 - array[0]) ** 2 + 100 * (array[1] - array[0] ** 2) ** 2
 
-    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting=random, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  3.379606654175286e-05
+    assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  3.379606654175286e-05
     assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting="LatinHypercube", mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.7068164604891756e-05
     assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting="Halton", mutation_setting='rand1', selection_setting='current'))[-1][1] ==  2.2428120991787372e-05
     assert list(differential_evolution(rosenbrock, [[0, 2], [0, 2]], init_setting="Sobol", mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.00016929239603726042
