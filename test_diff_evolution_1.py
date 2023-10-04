@@ -21,10 +21,10 @@ def test_diff_evolution_part_1():
     def rosenbrock(array):
         return (1 - array[0]) ** 2 + 100 * (array[1] - array[0] ** 2) ** 2
 
-    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting=random, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.0007965913468088421
-    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting=LatinHypercube, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.0030976463647417354
-    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting=Halton, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.0020390331159686175
-    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting=Sobol, mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.00041926842306164364
+    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.0007965913468088421
+    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting='LatinHypercube', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.0030976463647417354
+    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting='Halton', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.0020390331159686175
+    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting='Sobol', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.00041926842306164364
     assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  3.942063862893974e-06
     assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='LatinHypercube', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  7.703976443451666e-06
     assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='Halton', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  1.5745836474678754e-06
