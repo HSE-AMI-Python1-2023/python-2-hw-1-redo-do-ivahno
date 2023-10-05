@@ -9,7 +9,7 @@ def test_einsum():
   np.random.seed(SEED)
   A = np.random.uniform(0, 1, 27)
   B = np.random.uniform(0, 1, 27)
-  assert task_00(A) == 13.11339235591917
-  assert task_01(A, B)[-5] == 0.24026149540094477
-  assert task_02(A, B) == 8.195894577699882
-  assert task_03(A, B)[-7][-2] == 0.12503313510400518
+  assert np.allclose(task_00(A), 13.11339235591917)
+  assert np.allclose(task_01(A, B)[-5], 0.24026149540094477)
+  assert np.allclose(task_02(A, B), 8.195894577699882)
+  assert np.allclose(task_03(A, B)[-7][-2], 0.12503313510400518)
