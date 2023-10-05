@@ -22,20 +22,20 @@ def test_diff_evolution_part_3():
         return (1 - array[0]) ** 2 + 100 * (array[1] - array[0] ** 2) ** 2
 
     
-    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  0.0007965913468088421
-    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting='random', mutation_setting='rand1', selection_setting='worst'))[-1][1] ==  9.08373646547208e-06
-    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting='random', mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1] ==  0.1283725015340844
-    assert list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting='random', mutation_setting='rand1', selection_setting='random_selection'))[-1][1] ==  0.006731723073572758
+    assert np.allclose(list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1], 0.0007965913468088421)
+    assert np.allclose(list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting='random', mutation_setting='rand1', selection_setting='worst'))[-1][1], 9.08373646547208e-06)
+    assert np.allclose(list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting='random', mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1], 0.1283725015340844)
+    assert np.allclose(list(differential_evolution(rosenbrock, [[-2, 2], [-2, 2]], init_setting='random', mutation_setting='rand1', selection_setting='random_selection'))[-1][1], 0.006731723073572758)
 
-    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  3.942063862893974e-06
-    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='worst'))[-1][1] ==  0.0
-    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1] ==  8.881784197001252e-15
-    assert list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='random_selection'))[-1][1] ==  3.2196574295539904e-09
+    assert np.allclose(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1], 3.942063862893974e-06)
+    assert np.allclose(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='worst'))[-1][1], 0.0)
+    assert np.allclose(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1], 8.881784197001252e-15)
+    assert np.allclose(list(differential_evolution(rastrigin, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='random_selection'))[-1][1], 3.2196574295539904e-09)
 
-    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1] ==  3.7769787297747826e-13
-    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='worst'))[-1][1] ==  0.0
-    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1] ==  0.0
-    assert list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='random_selection'))[-1][1] ==  1.4921397450962104e-13
+    assert np.allclose(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='current'))[-1][1], 3.7769787297747826e-13)
+    assert np.allclose(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='worst'))[-1][1], 0.0)
+    assert np.allclose(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='random_among_worst'))[-1][1], 0.0)
+    assert np.allclose(list(differential_evolution(griewank, [[-20, 20], [-20, 20]], init_setting='random', mutation_setting='rand1', selection_setting='random_selection'))[-1][1], 1.4921397450962104e-13)
 
 
 
